@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.90.2 -->
+<interface>
+  <!-- interface-name ui_file.ui -->
+  <requires lib="gio" version="2.0"/>
+  <requires lib="gtk" version="4.12"/>
+  <template class="window" parent="GtkApplicationWindow">
+    <property name="default-height">150</property>
+    <property name="default-width">450</property>
+    <property name="title">pyt_gtk4_headerbar02</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <child type="end">
+          <object class="GtkMenuButton" id="menubutton">
+            <property name="icon-name">open-menu-symbolic</property>
+          </object>
+        </child>
+        <child type="start">
+          <object class="GtkButton">
+            <property name="action-name">win.button</property>
+            <property name="icon-name">pan-start-symbolic</property>
+            <signal name="clicked" handler="on_button_clicked"/>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="GtkTextView"/>
+    </child>
+  </template>
+  <menu id="menu">
+    <section>
+      <attribute name="label">Section 1</attribute>
+      <item>
+        <attribute name="action">win.button1</attribute>
+        <attribute name="label">Button1</attribute>
+        <attribute name="target">Button1</attribute>
+        <attribute name="accel">&lt;ctl&gt;a</attribute>
+      </item>
+      <item>
+        <attribute name="action">win.button1</attribute>
+        <attribute name="label">Button2</attribute>
+        <attribute name="target">Button2</attribute>
+        <attribute name="accel">&lt;ctl&gt;b</attribute>
+      </item>
+    </section>
+    <section>
+      <attribute name="label">Section 2</attribute>
+      <item>
+        <attribute name="action">win.button3</attribute>
+        <attribute name="label">Button3</attribute>
+        <attribute name="accel">&lt;ctl&gt;c</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
